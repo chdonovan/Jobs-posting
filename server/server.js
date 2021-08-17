@@ -12,6 +12,9 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app });
 
+// serve up static assets (images)
+app.use('/images', express.static(path.join(__dirname, '../client/images')));
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
@@ -25,7 +28,9 @@ app.get('*', (req, res) => {
   
 db.once('open', () => {
     app.listen(PORT, () => {
+        // server
       console.log(`API server running on port ${PORT}!`);
+      // graphql
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
 });
