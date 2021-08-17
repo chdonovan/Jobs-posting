@@ -1,0 +1,19 @@
+{
+  "name": "jobs-posting",
+  "version": "1.0.0",
+  "description": "* Chris D.\r * Nathaniel A.\r * Kateryna B.\r * Colin R.\r * Jose M.\r * Ronald M.\r * Bayleigh W.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chdonovan/Jobs-posting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chdonovan/Jobs-posting/issues"
+  },
+  "homepage": "https://github.com/chdonovan/Jobs-posting#readme"
+}
