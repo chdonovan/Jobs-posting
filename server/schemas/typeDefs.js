@@ -27,7 +27,7 @@ const typeDefs = gql`
     categories: [Category]
     jobs(category: ID, name: String): [Job]
     job(_id: ID!): Job
-    me: User
+    user: User
   }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth

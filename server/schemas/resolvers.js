@@ -19,7 +19,7 @@ const resolvers = {
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: '', //unsure on this. need input
+          path: 'jobs.responses', 
           populate: 'category',
         });
 
