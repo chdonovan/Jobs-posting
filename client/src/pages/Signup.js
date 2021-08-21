@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
-import { SingleFieldSubscriptionsRule } from 'graphql';
 
 function Signup(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -11,6 +10,7 @@ function Signup(props) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log(formState);
         const mutationResponse = await addUser({
             variables: {
             email: formState.email,

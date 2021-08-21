@@ -8,6 +8,7 @@ import { ApolloClient,
   createHttpLink 
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Auth from './utils/auth';
 
 import Nav from './components/Nav';
 import Login from './pages/Login';
@@ -20,6 +21,7 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   // call istokenexpired in a if statement
+  Auth.isTokenExpired();
   return {
     headers: {
       ...headers,
