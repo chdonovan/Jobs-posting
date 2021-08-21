@@ -22,7 +22,13 @@ const jobsSchema = new Schema ({
     },
     location: {
         address: String
-    }
+    },
+    createAt:{
+        type: Date,
+        default: Date.now,
+        get: (createdAtVal)=> dateFormat(createdAtval)
+        },
+    jobs: [Jobs.schema]
 });
 
 const Jobs = mongoose.model('job', jobsSchema);
