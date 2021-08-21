@@ -1,15 +1,22 @@
 const mongoose = require('mongoose');
+//const { Schema, model, Types} = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const {Schema } = mongoose;
 
-const jobsSchema = new Schema ({
+
+
+const jobSchema = new Schema (
+    {
     title: {
         type: String,
         required: true,
         trim: true,
     },
     description: {
-        type: String
+        type: String,
+        minLength: 1,
+        maxLength: 300,
     },
     price: {
         type: String,
@@ -22,9 +29,19 @@ const jobsSchema = new Schema ({
     },
     location: {
         address: String
-    }
+    },
+    createdAt:{
+        type: Date,
+        default: Date.now,
+        get: (createdAtVal)=> dateFormat(createdAtval)
+    },
+    
 });
 
-const Jobs = mongoose.model('job', jobsSchema);
 
-module.exports = Jobs;
+// jobsSchema.virtual('responseCount').get(function(){
+//     return this.responses.length;
+// })
+const Job = mongoose.model('Job', jobSchema);
+
+module.exports = Job;

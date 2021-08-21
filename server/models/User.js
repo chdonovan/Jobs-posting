@@ -2,7 +2,8 @@ const mongoose  = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Jobs = require('./Jobs');
+const Job = require('./Jobs');
+
 
 const userSchema = new Schema ({
     firstName: {
@@ -26,7 +27,7 @@ const userSchema = new Schema ({
         required: true,
         minlength: 5
     },
-    jobs: [Jobs.schema]
+    job: [Job.schema]
 });
 
 userSchema.pre('save', async function(next){

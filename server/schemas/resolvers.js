@@ -13,18 +13,18 @@ const resolvers = {
         params.category = category;
       }
     },
-    job: async (parent, { _id }) => {
+    jobs: async (parent, { _id }) => {
       return await Job.findById(_id).populate('category');
     },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
-          path: '', //unsure on this. need input
+          path: 'jobs.responses', 
           populate: 'category',
         });
 
         // do we want to sort by created date of the job posting?
-        // user.jobs.sort((a, b) => b.createdDate - a.createdDate)
+        // user.job.sort((a, b) => b.createdDate - a.createdDate)
 
         return user;
       }
@@ -37,11 +37,11 @@ const resolvers = {
 
       return { token, user };
     },
-    addJob: async (parent, { jobs }, context) => {
+    addJob: async (parent, { job }, context) => {
       if (context.user) {
-        const newJob = new Job({ jobs });
+        const newJob = new Job({ jobs});
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { jobs: newJob } });
+        await User.findByIdAndUpdate(context.user._id, { $push: { job: newJob } });
 
         return newJob;
       }

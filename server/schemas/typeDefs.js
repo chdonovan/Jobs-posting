@@ -17,7 +17,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
-    jobs: [Job]
+    job: [Job]
   }
   type Auth {
     token: ID!
@@ -27,14 +27,14 @@ const typeDefs = gql`
     categories: [Category]
     jobs(category: ID, name: String): [Job]
     job(_id: ID!): Job
-    me: User
+    user: User
   }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    addJob(jobs: [ID]!): Job
+    addJob(job: [ID]!): Job
     updateUser(username: String, email: String, password: String): User
     updateJob(_id: ID!, payment: Int!): Job
-    removeJob(_id: ID!): Jobs
+    removeJob(_id: ID!): Job
     login(username: String!, email: String!, password: String!): Auth
   }
 `;
