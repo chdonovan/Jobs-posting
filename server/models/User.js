@@ -27,7 +27,7 @@ const userSchema = new Schema ({
         required: true,
         minlength: 5
     },
-    
+    jobs: [Jobs.schema]
 });
 
 userSchema.pre('save', async function(next){

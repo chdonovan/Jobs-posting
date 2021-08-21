@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const {Schema } = mongoose;
 
@@ -27,8 +28,8 @@ const jobsSchema = new Schema ({
         type: Date,
         default: Date.now,
         get: (createdAtVal)=> dateFormat(createdAtval)
-        },
-    jobs: [Jobs.schema]
+    },
+    
 });
 
 const Jobs = mongoose.model('job', jobsSchema);
