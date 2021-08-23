@@ -1,16 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink 
-} from '@apollo/client';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Auth from './utils/auth';
 
 import Nav from './components/Nav';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -19,7 +11,7 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   // call istokenexpired in a if statement
-  Auth.isTokenExpired();
+  //Auth.isTokenExpired();
   return {
     headers: {
       ...headers,
@@ -36,15 +28,23 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Nav />
-        <Switch>
-          <Route exact path='/login' component={Login} />
-          <Route exact path="/signup" component={Signup} />
-        </Switch>
-      </Router>
+        <Nav></Nav>
     </ApolloProvider>
   );
 }
+
+// function App() {
+//   return (
+//     <ApolloProvider client={client}>
+//       <Router>
+//         <Nav />
+//         <Switch>
+//           <Route exact path='/login' component={Login} />
+//           <Route exact path="/signup" component={Signup} />
+//         </Switch>
+//       </Router>
+//     </ApolloProvider>
+//   );
+// }
 
 export default App;
