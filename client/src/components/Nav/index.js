@@ -8,6 +8,7 @@ import logo from '../../assets/images/logo.png'
 import Home from '../../pages/Home'
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
+import Main from '../../pages/Main'
 
 
 const Nav = () => {
@@ -92,7 +93,7 @@ const Nav = () => {
                                                     <NavLink exact to='/' className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium" replace>Contact Us</NavLink>
                                                 </a>
                                                 <a key='about' href='#faq'>
-                                                    <NavLink exact to='/' className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium" replace>FAQ</NavLink>
+                                                    <NavLink exact to='/Main' className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium" replace>FAQ MAIN CHANGE</NavLink>
                                                 </a>
                                                 <a key='about'>
                                                     <NavLink exact to='/Login' className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium" replace>Login</NavLink>
@@ -111,10 +112,11 @@ const Nav = () => {
                                 <Route exact path="/" component={Home} />
                                 <Route path="/Login" component={Login} />
                                 <Route path="/Signup" component={Signup} />
+                                <Route path="/Main" component={Main} />
 
                                 {/* <Route path="/Dashboard" component={Dashboard} />
                                 <Route path="/Calendar" component={Calendar} />
-                                <Route path="/Main" component={Main} />
+                                
                                 <Route path="/Settings" component={Settings} />
                                  */}
                             </Switch>

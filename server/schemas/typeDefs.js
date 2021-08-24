@@ -20,7 +20,7 @@ const typeDefs = gql`
     job: [Job]
   }
   type Auth {
-    token: ID!
+    token: ID
     user: User
   }
   type Query {
@@ -30,12 +30,22 @@ const typeDefs = gql`
     user: User
   }
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
     addJob(job: [ID]!): Job
     updateUser(username: String, email: String, password: String): User
     updateJob(_id: ID!, payment: Int!): Job
     removeJob(_id: ID!): Job
-    login(username: String!, email: String!, password: String!): Auth
+    login(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
   }
 `;
 

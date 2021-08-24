@@ -28,7 +28,12 @@ const userSchema = new Schema ({
         minlength: 5
     },
     job: [Job.schema]
-});
+},
+{
+    toJSON: {
+      virtuals: true,
+    },
+  });
 
 userSchema.pre('save', async function(next){
     if (this.isNew || this.isModified('password')) {
