@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import skyline from '../assets/images/skyline.png';
 
 
 
@@ -10,7 +11,7 @@ const Main = () => {
         We are here to help you with all your needs!
         <br /> Choose what you want to do:
       </p>
-      <div className="mt-5 sm:mt-8 sm:flex justify-center">
+      <div className="mt-5 sm:mt-8 sm:flex justify-center space-x-20">
         <div className="w-60 rounded-lg shadow ">
           <a>
             <NavLink
@@ -21,6 +22,10 @@ const Main = () => {
             >
               I need help
             </NavLink>
+            <p className="mt-3 lg:text-base text-center text-base text-gray-500 sm:mt-5 sm:text-lg  mx-auto md:mt-5 md:text-xl justify-center border-opacity-0">
+                Create listing. Set your price. 
+                <br /> Choose between hundreds of gigs!
+            </p>
           </a>
         </div>
         <div className="w-60 mt-3 sm:mt-0 sm:ml-3">
@@ -33,8 +38,15 @@ const Main = () => {
             >
               I want to help
             </NavLink>
+            <p className="mt-3 lg:text-base text-center text-base text-gray-500 sm:mt-5 sm:text-lg  mx-auto md:mt-5 md:text-xl justify-center ">
+                Need some cash? Easy-peasy!
+                <br /> Your money just 3 clicks away!
+            </p>
           </a>
         </div>
+      </div>
+      <div className="bg-cover">
+        <img src={skyline} />
       </div>
     </div>
   );
