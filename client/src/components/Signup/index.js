@@ -6,17 +6,20 @@ import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const SignupForm = () => {
-  const [formState, setFormState] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-  });
-  const [addUser] = useMutation(ADD_USER);
+    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
+    const [addUser] = useMutation(ADD_USER);
 
-  // update state based on form input changes
-  const handleChange = event => {
-    const { name, value } = event.target;
+    const handleChange = event => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value
+        });
+    };
+
+    const handleFormSubmit = async event => {
+        event.preventDefault();
 
     setFormState({
       ...formState,
