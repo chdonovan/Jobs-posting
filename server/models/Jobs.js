@@ -2,42 +2,37 @@ const mongoose = require('mongoose');
 //const { Schema, model, Types} = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const {Schema } = mongoose;
+const { Schema } = mongoose;
 
-
-
-const jobSchema = new Schema (
-    {
-    title: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    description: {
-        type: String,
-        minLength: 1,
-        maxLength: 300,
-    },
-    price: {
-        type: String,
-        require: true,
-    },
-     category: {
-        type: Schema.Types.ObjectId,
-        red: 'Category',
-        required: true
-    },
-    location: {
-        address: String
-    },
-    createdAt:{
-        type: Date,
-        default: Date.now,
-        get: (createdAtVal)=> dateFormat(createdAtval)
-    },
-    
+const jobSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  description: {
+    type: String,
+    minLength: 1,
+    maxLength: 300,
+  },
+  price: {
+    type: String,
+    require: true,
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    red: 'Category',
+    required: true,
+  },
+  location: {
+    address: String,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: createdAtVal => dateFormat(createdAtval),
+  },
 });
-
 
 // jobsSchema.virtual('responseCount').get(function(){
 //     return this.responses.length;

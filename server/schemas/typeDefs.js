@@ -7,10 +7,18 @@ const typeDefs = gql`
   }
   type Job {
     _id: ID
-    name: String
+    title: String
     description: String
     price: Float
     category: Category
+    location: String
+    createdAt: String
+  }
+  type Response {
+    _id: ID
+    responseText: String
+    username: String
+    createdAt: String
   }
   type User {
     _id: ID
@@ -27,7 +35,9 @@ const typeDefs = gql`
     categories: [Category]
     jobs(category: ID, name: String): [Job]
     job(_id: ID!): Job
-    user: User
+    user:(username: String!): User
+    users: [User]
+    me: User
   }
   type Mutation {
     addUser(
