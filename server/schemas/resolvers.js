@@ -32,6 +32,7 @@ const resolvers = {
     // users: async () => {
     //   return User.find().select('-__v -password').populate('jobs');
     // },
+
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
@@ -89,7 +90,9 @@ const resolvers = {
     //     );
     //   }
     // },
+
     login: async (parent, { email, password }) => {
+      console.log('this is a test');
       const user = await User.findOne({ email });
       if (!user) {
         throw new AuthenticationError('Incorrect login credentials!');
