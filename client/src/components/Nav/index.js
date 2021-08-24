@@ -15,10 +15,6 @@ import Dashboard from "../../pages/Dashboard";
 const Nav = () => {
 
 // const navigation = [
-//     { name: 'About'},
-//     { name: 'FAQ'},
-//     { name: 'Login'},
-
 //     { name: 'Main', href: '#', current: true },
 //     { name: 'Dashboard', href: '#', current: false },
 //     { name: 'Calendar', href: '#', current: false },
@@ -26,50 +22,50 @@ const Nav = () => {
 //     { name: 'Logout', href: '#', current: false },
 // ]
 
-// function classNames(...classes) {
-//     return classes.filter(Boolean).join(' ')
-// }
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
 
 
 
     return (
       <HashRouter>
-        <Disclosure as="nav">
+        <Disclosure as='nav'>
           {({ open }) => (
             <>
-              <Disclosure.Panel className="sm:hidden">
-                <div className="px-2 pt-2 pb-3 space-y-1">
+              <Disclosure.Panel className='sm:hidden'>
+                <div className='px-2 pt-2 pb-3 space-y-1'>
                   <a
-                    key="about"
-                    href="#about"
-                    className="text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    key='about'
+                    href='#about'
+                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >
-                    <NavLink exact to="/" className="nav-link" replace>
+                    <NavLink exact to='/' className='nav-link' replace>
                       About
                     </NavLink>
                   </a>
                   <a
-                    key="contact"
-                    className="text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    key='contact'
+                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >
-                    <NavLink exact to="/" className="nav-link" replace>
+                    <NavLink exact to='/' className='nav-link' replace>
                       Contact Us
                     </NavLink>
                   </a>
                   <a
-                    key="faq"
-                    href="#faq"
-                    className="text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    key='faq'
+                    href='#faq'
+                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >
-                    <NavLink exact to="/" className="nav-link" replace>
+                    <NavLink exact to='/' className='nav-link' replace>
                       FAQ
                     </NavLink>
                   </a>
                   <a
-                    key="login"
-                    className="text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    key='login'
+                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >
-                    <NavLink exact to="/Login" className="nav-link" replace>
+                    <NavLink exact to='/Login' className='nav-link' replace>
                       Login
                     </NavLink>
                   </a>
@@ -79,73 +75,145 @@ const Nav = () => {
               <div>
                 {Auth.loggedIn() ? (
                   <>
-                    <li href="/" onClick={Auth.logout}>
-                      Logout
-                    </li>
+                    {/* Menu dropdown */}
+                    <div className='relative flex justify-between'>
+                      <div className='flex items-center h-16'>
+                        <Menu as='div' className='ml-0 relative '>
+                          <div>
+                            <Menu.Button className='rounded-br-lg p-4 bg-gray-500 flex focus:outline-none'>
+                              <MenuIcon className='h-8 text-gray-200'>
+                                <span className='sr-only'>Open user menu</span>
+                              </MenuIcon>
+                            </Menu.Button>
+                          </div>
+                          <div className=''>
+                            <Transition
+                              as={Fragment}
+                              enter='transition ease-out duration-100'
+                              enterFrom='transform opacity-0 scale-95'
+                              enterTo='transform opacity-100 scale-100'
+                              leave='transition ease-in duration-75'
+                              leaveFrom='transform opacity-100 scale-100'
+                              leaveTo='transform opacity-0 scale-95'
+                            >
+                              <Menu.Items className='h-screen origin-top-left absolute left-0 w-16 py-1 bg-gray-300 bg-opacity-25 focus:outline-none'>
+                                <Menu.Item>
+                                  <li className='block px-4 py-2 text-sm text-gray-700'>
+                                    Dashboard icon
+                                  </li>
+                                </Menu.Item>
+                                <Menu.Item>
+                                  <li className='block px-4 py-2 text-sm text-gray-700'>
+                                    Calendar icon
+                                  </li>
+                                </Menu.Item>
+                                <Menu.Item>
+                                  <li className='block px-4 py-2 text-sm text-gray-700'>
+                                    Settings icon
+                                  </li>
+                                </Menu.Item>
+                                <Menu.Item>
+                                  <li
+                                    className='block px-4 py-2 text-sm text-gray-700'
+                                    onClick={Auth.logout}
+                                  >
+                                    Sign out icon
+                                  </li>
+                                </Menu.Item>
+                              </Menu.Items>
+                            </Transition>
+                          </div>
+                        </Menu>
+                        {/* Menu dropdown ends */}
+
+                        <div className='ml-5 mt-2'>
+                          <img className=' h-14' src={logo} alt='Logo' />
+                        </div>
+                      </div>
+                      <div className='relative flex mt-3 mr-7'>
+                        <div className='profile'>
+                          <div>
+                            <p>name</p>
+                            <p>stars</p>
+                          </div>
+                        </div>
+                        <div>
+                          <span className='inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100'>
+                            <svg
+                              className='h-full w-full text-gray-300'
+                              fill='currentColor'
+                              viewBox='0 0 24 24'
+                            >
+                              <path d='M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z' />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                   </>
                 ) : (
                   <div>
-                    <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                      <div className="relative flex items-center justify-between h-16">
-                        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+                      <div className='relative flex items-center justify-between h-16'>
+                        <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
                           {/* Mobile menu button*/}
-                          <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                            <span className="sr-only">Open main menu</span>
+                          <Disclosure.Button className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
+                            <span className='sr-only'>Open main menu</span>
                             {open ? (
                               <XIcon
-                                className="block h-6 w-6"
-                                aria-hidden="true"
+                                className='block h-6 w-6'
+                                aria-hidden='true'
                               />
                             ) : (
                               <MenuIcon
-                                className="block h-6 w-6"
-                                aria-hidden="true"
+                                className='block h-6 w-6'
+                                aria-hidden='true'
                               />
                             )}
                           </Disclosure.Button>
                         </div>
-                        <div className="sm:block sm:ml-auto sm:mr-auto">
-                          <img className=" h-12" src={logo} alt="Logo" />
+                        <div className='sm:block sm:ml-auto sm:mr-auto'>
+                          <img className=' h-12' src={logo} alt='Logo' />
                         </div>
-                        <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-end">
-                          <div className="hidden sm:block sm:ml-6">
-                            <div className="flex space-x-4">
+                        <div className='flex-1 flex items-center justify-center sm:items-stretch sm:justify-end'>
+                          <div className='hidden sm:block sm:ml-6'>
+                            <div className='flex space-x-4'>
                               <div>
-                                <a key="about" href="#about">
+                                <a key='about' href='#about'>
                                   <NavLink
                                     exact
-                                    to="/"
-                                    className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+                                    to='/'
+                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
                                     About
                                   </NavLink>
                                 </a>
-                                <a key="about">
+                                <a key='about'>
                                   <NavLink
                                     exact
-                                    to="/Dashboard"
-                                    className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+                                    to='/Dashboard'
+                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
                                     Contact Us DASH CHANGE
                                   </NavLink>
                                 </a>
-                                <a key="about" href="#faq">
+                                <a key='about' href='#faq'>
                                   <NavLink
                                     exact
-                                    to="/Main"
-                                    className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+                                    to='/Main'
+                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
                                     FAQ MAIN CHANGE
                                   </NavLink>
                                 </a>
-                                <a key="about">
+                                <a key='about'>
                                   <NavLink
                                     exact
-                                    to="/Login"
-                                    className="nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium"
+                                    to='/Login'
+                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
                                     Login
@@ -157,23 +225,21 @@ const Nav = () => {
                         </div>
                       </div>
                     </div>
+                    <div className='object-center'>
+                      <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path='/Login' component={Login} />
+                        <Route path='/Signup' component={Signup} />
+                        <Route path='/Main' component={Main} />
+                        <Route path='/Dashboard' component={Dashboard} />
+                        {/*
+                        <Route path='/Settings' component={Settings} />
+                        <Route path='/Dashboard' component={Dashboard} />
+                        */}
+                      </Switch>
+                    </div>
                   </div>
                 )}
-              </div>
-              <div className="object-center">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/Login" component={Login} />
-                  <Route path="/Signup" component={Signup} />
-                  <Route path="/Main" component={Main} />
-                  <Route path="/Dashboard" component={Dashboard} />
-
-                  {/* 
-                                <Route path="/Calendar" component={Calendar} />
-                                
-                                <Route path="/Settings" component={Settings} />
-                                 */}
-                </Switch>
               </div>
             </>
           )}
@@ -183,75 +249,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-
-
-//           DO NOT DELETE !          //
-
-
-                    // {/* Menu dropdown */}
-                    // <Menu as="div" className="ml-3 relative">
-                    // <div>
-                    //     <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    //     <span className="sr-only">Open user menu</span>
-                    //     <img
-                    //         className="h-10 w-10 rounded-full"
-                    //         src="#"
-                    //         alt=""
-                    //     />
-                    //     </Menu.Button>
-                    // </div>
-                    // <Transition
-                    //     as={Fragment}
-                    //     enter="transition ease-out duration-100"
-                    //     enterFrom="transform opacity-0 scale-95"
-                    //     enterTo="transform opacity-100 scale-100"
-                    //     leave="transition ease-in duration-75"
-                    //     leaveFrom="transform opacity-100 scale-100"
-                    //     leaveTo="transform opacity-0 scale-95"
-                    // >
-                    //     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    //     <Menu.Item>
-                    //         {({ active }) => (
-                    //         <a
-                    //             href="#"
-                    //             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                    //         >
-                    //             Dashboard
-                    //         </a>
-                    //         )}
-                    //     </Menu.Item>
-                    //     <Menu.Item>
-                    //         {({ active }) => (
-                    //         <a
-                    //             href="#"
-                    //             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                    //         >
-                    //             Calendar
-                    //         </a>
-                    //         )}
-                    //     </Menu.Item>
-                    //     <Menu.Item>
-                    //         {({ active }) => (
-                    //         <a
-                    //             href="#"
-                    //             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                    //         >
-                    //             Settings
-                    //         </a>
-                    //         )}
-                    //     </Menu.Item>
-                    //     <Menu.Item>
-                    //         {({ active }) => (
-                    //         <a
-                    //             href="#"
-                    //             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                    //         >
-                    //             Sign out
-                    //         </a>
-                    //         )}
-                    //     </Menu.Item>
-                    //     </Menu.Items>
-                    // </Transition>
-                    // </Menu>
-                    // {/* Menu dropdown ends */}

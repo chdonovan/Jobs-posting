@@ -12,15 +12,6 @@ const SignupForm = () => {
     const handleChange = event => {
         const { name, value } = event.target;
 
-        setFormState({
-            ...formState,
-            [name]: value
-        });
-    };
-
-    const handleFormSubmit = async event => {
-        event.preventDefault();
-
     setFormState({
       ...formState,
       [name]: value,
