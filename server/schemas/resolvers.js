@@ -50,7 +50,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, args, context) => {
+    addJob: async (parent, args, context) => {
       if (context.user) {
         const job = await Job.create({ ...args, username: context.user.username });
 
