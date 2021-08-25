@@ -5,6 +5,11 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Auth from "../../utils/auth";
 import logo from '../../assets/images/logo.png'
 
+import { BsBriefcase } from 'react-icons/bs';
+import { IoSettingsOutline, IoHomeOutline } from 'react-icons/io5';
+import { VscSignOut } from 'react-icons/vsc';
+
+
 import Home from '../../pages/Home'
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
@@ -106,7 +111,7 @@ const Nav = () => {
                                       className='block px-4 py-2 text-sm text-gray-700'
                                       replace
                                     >
-                                      Main menu icon
+                                      <IoHomeOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
                                   </a>
                                 </Menu.Item>
@@ -118,15 +123,15 @@ const Nav = () => {
                                       className='block px-4 py-2 text-sm text-gray-700'
                                       replace
                                     >
-                                      Dashboard icon
+                                      <BsBriefcase className='my-2 h-7 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
                                   </a>
                                 </Menu.Item>
-                                <Menu.Item>
+                                {/* <Menu.Item>
                                   <li className='block px-4 py-2 text-sm text-gray-700'>
-                                    Calendar icon
+                                    <p>Calendar icon</p>
                                   </li>
-                                </Menu.Item>
+                                </Menu.Item> */}
                                 <Menu.Item>
                                   <a key='settings'>
                                     <NavLink
@@ -135,7 +140,7 @@ const Nav = () => {
                                       className='block px-4 py-2 text-sm text-gray-700'
                                       replace
                                     >
-                                      Settings icon
+                                      <IoSettingsOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
                                   </a>
                                 </Menu.Item>
@@ -144,7 +149,7 @@ const Nav = () => {
                                     className='block px-4 py-2 text-sm text-gray-700'
                                     onClick={Auth.logout}
                                   >
-                                    Sign out icon
+                                    <VscSignOut className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                   </li>
                                 </Menu.Item>
                               </Menu.Items>

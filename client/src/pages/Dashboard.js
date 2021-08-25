@@ -1,6 +1,7 @@
 import React from 'react';
 // import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import map from '../assets/images/map-img-placeholder.png';
+import { BsFillEnvelopeFill } from 'react-icons/bs'
 
 const Dashboard = () => {
   return (
@@ -64,9 +65,9 @@ const Dashboard = () => {
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2.5 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  MSG
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 hover:text-gray-700' />
                 </button>
               </div>
             </div>
@@ -131,9 +132,9 @@ const Dashboard = () => {
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2.5 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  MSG
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 hover:text-gray-700' />
                 </button>
               </div>
             </div>
@@ -196,9 +197,9 @@ const Dashboard = () => {
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2.5 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  MSG
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 hover:text-gray-700' />
                 </button>
               </div>
             </div>
