@@ -7,12 +7,6 @@ const { User } = require('../models');
 
 const resolvers = {
   Query: {
-<<<<<<< HEAD
-    categories: async () => {
-      return await Category.find();
-    }
-    
-=======
     // categories: async () => {
     //   return await Category.find();
     // },
@@ -52,7 +46,6 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
->>>>>>> 17bd51bec035741d0831a5b806f1d63d42d4013d
   },
   Mutation: {
     addUser: async (parent, args) => {
