@@ -38,16 +38,19 @@ export const ADD_JOB = gql`
     $title: String
     $price: String
     $description: String
+    $location: String
   ) {
     addJob(
       title: $title
       price: $price
       description: $description
+      location: $location
     ) {
       _id
       title
       price
       description
+      location
     }
   }
 `;

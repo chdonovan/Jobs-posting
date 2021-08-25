@@ -9,6 +9,7 @@ const JobPosting = () => {
     title: '',
     price: '',
     description: '',
+    location: ''
   });
 
   const [addJob] = useMutation(ADD_JOB);
@@ -36,6 +37,7 @@ const JobPosting = () => {
         title: '',
         price: '',
         description: '',
+        location: ''
       });
 
     } catch (e) {
@@ -144,35 +146,21 @@ const JobPosting = () => {
               <div className='my-2 w-full mx-auto'>
                 <p className='font-bold text-gray-700'>LOCATION</p>
                 <p className='text-gray-500 mt-1'>
-                  Choose on map where the job is located
+                  Enter the Address of the Job
                 </p>
                 <div className=''>
-                  <div className='mt-5 w-full '>
-                    <div className='relative h-56 border border-gray-200 sm:rounded-lg sm:overflow-hidden'>
-                      <img className='lg-map-placeholder' src={map} />
+                <div className='mt-1'>
+                      <textarea
+                        id='location'
+                        name='location'
+                        rows={3}
+                        className='shadow-sm focus:ring-gray-400 focus:border-gray-400 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md'
+                        placeholder=''
+                        value={formState.location}
+                        onChange={handleChange}
+                      />
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className='payment mt-10'>
-            <div className='flex'>
-              <div className='w-2/12'>
-                <p className='text-center font-bold text-lg text-gray-700 mx-5 py-0.5 rounded-xl shadow-md bg-gray-300'>
-                  03.
-                </p>
-                <div className='py-4 flex divide-x-4 divide-gray-200 h-full'>
-                  <div className='flex-1'></div>
-                  <div className='flex-1'></div>
-                </div>
-              </div>
-
-              <div className='my-2 w-full mx-auto'>
-                <p className='font-bold text-gray-700'>PAYMENT METHOD</p>
-                <p className='text-gray-500 mt-1'>How would you like to pay?</p>
-                <div className=''></div>
               </div>
             </div>
           </div>
@@ -181,7 +169,7 @@ const JobPosting = () => {
             <div className='flex items-center'>
               <div className='w-2/12'>
                 <p className='text-center font-bold text-lg text-gray-700 mx-5 py-0.5 rounded-xl shadow-md bg-gray-300'>
-                  04.
+                  03.
                 </p>
               </div>
 
