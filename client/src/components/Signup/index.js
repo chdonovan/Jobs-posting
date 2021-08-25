@@ -6,20 +6,16 @@ import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const SignupForm = () => {
-    const [formState, setFormState] = useState({ firstName: '', lastName: '', email: '', password: '' });
-    const [addUser] = useMutation(ADD_USER);
+  const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+  const [addUser] = useMutation(ADD_USER);
 
     const handleChange = event => {
         const { name, value } = event.target;
-
-        setFormState({
-            ...formState,
-            [name]: value
-        });
-    };
-
-    const handleFormSubmit = async event => {
-        event.preventDefault();
 
     setFormState({
       ...formState,
@@ -27,7 +23,6 @@ const SignupForm = () => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async event => {
     event.preventDefault();
     console.log(formState, 'test123');
@@ -56,6 +51,9 @@ const SignupForm = () => {
           <form className="mt-8 space-y-6" onSubmit={handleFormSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
+
+
+              
               {/* NEED TO DRY CODE BELOW */}
 
               <div>
