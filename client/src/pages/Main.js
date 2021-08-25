@@ -15,7 +15,7 @@ const Main = () => {
               <Link
                 exact
                 to='/JobPosting'
-                className='bg-cust-yellow font-bold flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-gray-600 bg-yellow-200 hover:bg-red-300 md:py-4 md:text-lg md:px-10 nav-link'
+                className='btn-main-yellow font-bold flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-gray-600 md:py-4 md:text-lg md:px-10 nav-link'
                 replace
               >
                 I need help
@@ -33,7 +33,7 @@ const Main = () => {
               <Link
                 exact
                 to='/Dashboard'
-                className='bg-cust-orange font-bold nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-gray-600 bg-red-300 hover:bg-red-400 md:py-4 md:text-lg md:px-10'
+                className='btn-main-orange font-bold nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-gray-600 md:py-4 md:text-lg md:px-10'
                 replace
               >
                 I want to help

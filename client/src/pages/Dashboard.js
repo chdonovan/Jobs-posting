@@ -59,15 +59,15 @@ const Dashboard = () => {
               <div className='flex items-center'>
                 <button
                   type='button'
-                  className='bg-cust-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-red-300 focus:outline-none focus:ring-none'
+                  className='btn-main-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 focus:outline-none focus:ring-none'
                 >
                   Request this job
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg leading-4 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 hover:text-gray-700' />
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600' />
                 </button>
               </div>
             </div>
@@ -126,7 +126,7 @@ const Dashboard = () => {
               <div className='flex items-center'>
                 <button
                   type='button'
-                  className='bg-cust-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-red-300 focus:outline-none focus:ring-none'
+                  className='btn-main-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 focus:outline-none focus:ring-none'
                 >
                   Request this job
                 </button>
@@ -134,7 +134,7 @@ const Dashboard = () => {
                   type='button'
                   className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 hover:text-gray-700' />
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600' />
                 </button>
               </div>
             </div>
@@ -191,7 +191,7 @@ const Dashboard = () => {
               <div className='flex items-center'>
                 <button
                   type='button'
-                  className='bg-cust-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-red-300 focus:outline-none focus:ring-none'
+                  className='btn-main-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 focus:outline-none focus:ring-none'
                 >
                   Request this job
                 </button>
@@ -199,7 +199,7 @@ const Dashboard = () => {
                   type='button'
                   className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 hover:text-gray-700' />
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 ' />
                 </button>
               </div>
             </div>
