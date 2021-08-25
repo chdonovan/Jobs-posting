@@ -11,6 +11,7 @@ import Signup from '../../pages/Signup';
 import Main from '../../pages/Main'
 import Dashboard from "../../pages/Dashboard";
 import Settings from '../../pages/Settings';
+import JobPosting from "../../pages/JobPosting";
 
 const Nav = () => {
 
@@ -185,6 +186,7 @@ function classNames(...classes) {
                         <Route exact path='/' component={Main} />
                         <Route path='/Dashboard' component={Dashboard} />
                         <Route path='/Settings' component={Settings} />
+                        <Route path='/JobPosting' component={JobPosting} />
                       </Switch>
                     </div>
                   </>

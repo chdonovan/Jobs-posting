@@ -49,3 +49,16 @@
 .cust-font {
 	font-family: 'Monda', sans-serif;
 }
+
+.bg-city{
+    position:fixed;
+    bottom:0px;
+		z-index: -1;
+}
+
+.lg-map-placeholder {
+	object-fit: cover;
+	position: absolute;
+  left: 0;
+  bottom: 0;
+}
