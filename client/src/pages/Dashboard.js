@@ -1,9 +1,17 @@
-import React from "react";
-import map from '../assets/images/map-img-placeholder.png'
+import React from 'react';
+// import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import map from '../assets/images/map-img-placeholder.png';
 
 const Dashboard = () => {
   return (
     <div>
+      <div>
+        {/* <Breadcrumb>
+          <Breadcrumb.Item href='#'>Dashboard</Breadcrumb.Item>
+          <Breadcrumb.Item href='#'>Category</Breadcrumb.Item>
+          <Breadcrumb.Item active>Moving</Breadcrumb.Item>
+        </Breadcrumb> */}
+      </div>
       <div className='mt-5 w-full md:w-9/12 m-auto'>
         <div className='flex border border-gray-200 shadow-lg sm:rounded-lg sm:overflow-hidden'>
           <div className='flex-1 px-4 py-5 bg-white space-y-6 sm:p-6'>

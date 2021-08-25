@@ -98,6 +98,18 @@ function classNames(...classes) {
                             >
                               <Menu.Items className='h-screen origin-top-left absolute left-0 w-16 py-1 bg-gray-300 bg-opacity-25 focus:outline-none'>
                                 <Menu.Item>
+                                  <a key='home-page'>
+                                    <NavLink
+                                      exact
+                                      to='/'
+                                      className='block px-4 py-2 text-sm text-gray-700'
+                                      replace
+                                    >
+                                      Main menu icon
+                                    </NavLink>
+                                  </a>
+                                </Menu.Item>
+                                <Menu.Item>
                                   <a key='settings'>
                                     <NavLink
                                       exact
@@ -144,15 +156,19 @@ function classNames(...classes) {
                           <img className=' h-14' src={logo} alt='Logo' />
                         </div>
                       </div>
-                      <div className='relative flex mt-3 mr-7'>
-                        <div className='profile'>
+                      <div className='relative flex mt-3 mr-14 items-center'>
+                        <div className='mr-5'>
                           <div>
-                            <p>name</p>
-                            <p>stars</p>
+                            <p className='cust-font font-bold text-gray-600'>
+                              NICOLAS CAGE
+                            </p>
+                            <p className='text-gray-500 flex justify-end'>
+                              ★★★☆☆
+                            </p>
                           </div>
                         </div>
-                        <div>
-                          <span className='inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100'>
+                        <div className='border rounded-full border-gray-300'>
+                          <span className='flex inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100'>
                             <svg
                               className='h-full w-full text-gray-300'
                               fill='currentColor'
