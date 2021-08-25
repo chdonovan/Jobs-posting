@@ -10,7 +10,7 @@ import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 import Main from '../../pages/Main'
 import Dashboard from "../../pages/Dashboard";
-
+import Settings from '../../pages/Settings';
 
 const Nav = () => {
 
@@ -108,9 +108,16 @@ function classNames(...classes) {
                                   </li>
                                 </Menu.Item>
                                 <Menu.Item>
-                                  <li className='block px-4 py-2 text-sm text-gray-700'>
-                                    Settings icon
-                                  </li>
+                                  <a key='settings'>
+                                    <NavLink
+                                      exact
+                                      to='/Settings'
+                                      className='block px-4 py-2 text-sm text-gray-700'
+                                      replace
+                                    >
+                                      Settings icon
+                                    </NavLink>
+                                  </a>
                                 </Menu.Item>
                                 <Menu.Item>
                                   <li
@@ -150,6 +157,13 @@ function classNames(...classes) {
                         </div>
                       </div>
                     </div>
+                    <div className='object-center'>
+                      <Switch>
+                        <Route exact path='/' component={Main} />
+                        <Route path='/Dashboard' component={Dashboard} />
+                        <Route path='/Settings' component={Settings} />
+                      </Switch>
+                      </div>
                   </>
                 ) : (
                   <div>
@@ -192,21 +206,21 @@ function classNames(...classes) {
                                 <a key='about'>
                                   <NavLink
                                     exact
-                                    to='/Dashboard'
+                                    to='/'
                                     className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
-                                    Contact Us DASH CHANGE
+                                    Contact Us
                                   </NavLink>
                                 </a>
                                 <a key='about' href='#faq'>
                                   <NavLink
                                     exact
-                                    to='/Main'
+                                    to='/'
                                     className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
-                                    FAQ MAIN CHANGE
+                                    FAQ
                                   </NavLink>
                                 </a>
                                 <a key='about'>
