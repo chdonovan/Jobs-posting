@@ -1,9 +1,18 @@
-import React from "react";
-import map from '../assets/images/map-img-placeholder.png'
+import React from 'react';
+// import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import map from '../assets/images/map-img-placeholder.png';
+import { BsFillEnvelopeFill } from 'react-icons/bs'
 
 const Dashboard = () => {
   return (
     <div>
+      <div>
+        {/* <Breadcrumb>
+          <Breadcrumb.Item href='#'>Dashboard</Breadcrumb.Item>
+          <Breadcrumb.Item href='#'>Category</Breadcrumb.Item>
+          <Breadcrumb.Item active>Moving</Breadcrumb.Item>
+        </Breadcrumb> */}
+      </div>
       <div className='mt-5 w-full md:w-9/12 m-auto'>
         <div className='flex border border-gray-200 shadow-lg sm:rounded-lg sm:overflow-hidden'>
           <div className='flex-1 px-4 py-5 bg-white space-y-6 sm:p-6'>
@@ -50,15 +59,15 @@ const Dashboard = () => {
               <div className='flex items-center'>
                 <button
                   type='button'
-                  className='bg-cust-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-red-300 focus:outline-none focus:ring-none'
+                  className='btn-main-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 focus:outline-none focus:ring-none'
                 >
                   Request this job
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2.5 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg leading-4 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  MSG
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600' />
                 </button>
               </div>
             </div>
@@ -117,15 +126,15 @@ const Dashboard = () => {
               <div className='flex items-center'>
                 <button
                   type='button'
-                  className='bg-cust-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-red-300 focus:outline-none focus:ring-none'
+                  className='btn-main-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 focus:outline-none focus:ring-none'
                 >
                   Request this job
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2.5 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  MSG
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600' />
                 </button>
               </div>
             </div>
@@ -182,15 +191,15 @@ const Dashboard = () => {
               <div className='flex items-center'>
                 <button
                   type='button'
-                  className='bg-cust-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-red-300 focus:outline-none focus:ring-none'
+                  className='btn-main-yellow py-2.5 px-5 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 focus:outline-none focus:ring-none'
                 >
                   Request this job
                 </button>
                 <button
                   type='button'
-                  className='ml-2 bg-gray-300 py-2.5 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
+                  className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg text-sm leading-4 font-bold text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-none'
                 >
-                  MSG
+                  <BsFillEnvelopeFill className='h-5 w-5 text-gray-600 ' />
                 </button>
               </div>
             </div>

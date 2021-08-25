@@ -10,6 +10,10 @@ const resolvers = {
     // categories: async () => {
     //   return await Category.find();
     // },
+  //     jobs: async () => {
+  //     return await Job.find();
+  // },
+
     // jobs: async (parent, { category, name }) => {
     //   const params = {};
     //   if (category) {
@@ -22,16 +26,16 @@ const resolvers = {
     // user: async (parent, args, context) => {
     //   if (context.user) {
     //     const user = await User.findById(context.user._id).populate({
-    //       path: 'jobs.responses',
-    //       populate: 'category',
+    //       // path: 'jobs.responses',
+    //       populate: 'jobs',
     //     });
 
     //     // do we want to sort by created date of the job posting?
     //     user.job.sort((a, b) => b.createdDate - a.createdDate);
 
     //     return user;
-    //   }
-    // },
+      //  }
+      // },
     // users: async () => {
     //   return User.find().select('-__v -password').populate('jobs');
     // },
@@ -55,18 +59,23 @@ const resolvers = {
 
       return { token, user };
     },
-    // addJob: async (parent, args, context) => {
-    //   if (context.user) {
-    //     const job = await Job.create({ ...args, username: context.user.username });
+    addJob: async (parent, args, context) => {
+      if (context.user) {
+        const job = await Job.create(args);
 
-    //     await User.findByIdAndUpdate(
-    //       { _id: context.user._id },
-    //       { $push: { jobs: job._id } },
-    //       { new: true }
-    //     );
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { jobs: job._id } },
+          { new: true }
+        );
+        await Job.findByIdAndUpdate(
+            {_id: job._id },
+            { userId: context.user._id},
+            { new: true }
+        );
 
-    //     return job;
-    //   }
+        return job;
+      }
 
     //   throw new AuthenticationError('You need to be logged in!');
     // },
@@ -92,7 +101,7 @@ const resolvers = {
     //       { new: true }
     //     );
     //   }
-    // },
+    },
 
     login: async (parent, { email, password }) => {
       console.log('this is a test');
@@ -119,7 +128,7 @@ const resolvers = {
     //   }
 
     //   throw new AuthenticationError('You must be logged in!');
-    // },
+    
   },
 };
 module.exports = resolvers;

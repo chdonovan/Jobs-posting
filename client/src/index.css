@@ -33,8 +33,24 @@
 	color: var(--red);
 }
 .cust-yellow {
-	color: var(--red);
+	color: var(--yellow);
 }
+
+
+.btn-cust-yellow {
+	background-color: var(--yellow);
+}
+.btn-cust-yellow:hover {
+	background-color: var(--orange);
+}
+
+.btn-cust-orange {
+	background-color: var(--orange);
+}
+.btn-cust-orange:hover {
+	background-color: var(--yellow);
+}
+
 
 .bg-cust-yellow {
 		background-color: var(--yellow);
@@ -46,6 +62,35 @@
 		background-color: var(--red);
 }
 
+
+.btn-main-yellow {
+	background-color: var(--yellow);
+}
+.btn-main-yellow:hover {
+	background-color:rgb(255, 189, 131);
+}
+
+.btn-main-orange {
+	background-color: var(--orange);
+}
+.btn-main-orange:hover {
+	background-color:rgb(255, 157, 128);
+}
+
+
 .cust-font {
 	font-family: 'Monda', sans-serif;
+}
+
+.bg-city{
+    position:fixed;
+    bottom:0px;
+		z-index: -1;
+}
+
+.lg-map-placeholder {
+	object-fit: cover;
+	position: absolute;
+  left: 0;
+  bottom: 0;
 }

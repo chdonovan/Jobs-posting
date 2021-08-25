@@ -19,14 +19,14 @@ const jobSchema = new Schema({
     type: String,
     require: true,
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    red: 'Category',
-    required: true,
-  },
-  location: {
-    address: String,
-  },
+  // category: {
+  //   type: Schema.Types.ObjectId,
+  //   red: 'Category',
+  //   required: true,
+  // },
+  // location: {
+  //   address: String,
+  // },
   createdAt: {
     type: Date,
     default: Date.now,
