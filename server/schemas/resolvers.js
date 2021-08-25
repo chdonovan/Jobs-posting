@@ -1,6 +1,10 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
-const { User } = require('../models');
+const { User, Job } = require('../models');
+
+
+
+
 
 const resolvers = {
   Query: {
@@ -17,9 +21,9 @@ const resolvers = {
     //     params.category = category;
     //   }
     // },
-    // job: async (parent, { _id }) => {
-    //   return await Job.findById(_id).populate('category');
-    // },
+    job: async (parent, { _id }) => {
+      return await Job.findById(_id);
+    },
     // user: async (parent, args, context) => {
     //   if (context.user) {
     //     const user = await User.findById(context.user._id).populate({
@@ -58,20 +62,15 @@ const resolvers = {
     },
     addJob: async (parent, args, context) => {
       if (context.user) {
-        const job = await Job.create(args);
+        const Job = await Job.create(args);
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { jobs: job._id } },
-          { new: true }
-        );
+        
         await Job.findByIdAndUpdate(
-            {_id: job._id },
-            { userId: context.user._id},
+            {_id: Job._id },
             { new: true }
         );
 
-        return job;
+        return {Job};
       }
 
     //   throw new AuthenticationError('You need to be logged in!');

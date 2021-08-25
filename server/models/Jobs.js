@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-//const { Schema, model, Types} = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+
+//const dateFormat = require('../utils/dateFormat');
 
 const { Schema } = mongoose;
 
@@ -24,13 +24,18 @@ const jobSchema = new Schema({
   //   red: 'Category',
   //   required: true,
   // },
-  // location: {
-  //   address: String,
+  location: {
+    location: String,
+  },
+  // createdAt: {
+  //   type: Date,
+  //   default: Date.now,
+  //   get: createdAtVal => dateFormat(createdAtval),
   // },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    get: createdAtVal => dateFormat(createdAtval),
+},
+{
+  toJSON: {
+    virtuals: true,
   },
 });
 
