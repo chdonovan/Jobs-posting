@@ -20,44 +20,44 @@ const resolvers = {
 
       return { token, user };
     },
-    addJob: async (parent, args, context) => {
-      if (context.user) {
-        const job = await Job.create({ ...args, username: context.user.username });
+    // addJob: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const job = await Job.create({ ...args, username: context.user.username });
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { jobs: job._id } },
-          { new: true }
-        );
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { jobs: job._id } },
+    //       { new: true }
+    //     );
 
-        return job;
-      }
+    //     return job;
+    //   }
 
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    updateUser: async (parent, args, context) => {
-      if (context.user) {
-        return await user.findByIdAndUpdate(context.user._id, args, { new: true });
-      }
-      throw new AuthenticationError('You are not logged in!');
-    },
-    updatedJob: async (parent, args, context) => {
-      if (context.job) {
-        return await job.findByIdAndUpdate(context.job._id, args, { new: true });
-      }
-      throw new AuthenticationError('You must be logged in!');
-    },
-    removeJob: async (parent, args, context) => {
-      if (context.user) {
-        const job = await Job.remove({ ...args, username: context.user.username });
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+    // updateUser: async (parent, args, context) => {
+    //   if (context.user) {
+    //     return await user.findByIdAndUpdate(context.user._id, args, { new: true });
+    //   }
+    //   throw new AuthenticationError('You are not logged in!');
+    // },
+    // updatedJob: async (parent, args, context) => {
+    //   if (context.job) {
+    //     return await job.findByIdAndUpdate(context.job._id, args, { new: true });
+    //   }
+    //   throw new AuthenticationError('You must be logged in!');
+    // },
+    // removeJob: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const job = await Job.remove({ ...args, username: context.user.username });
 
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $pull: { jobs: job._id } },
-          { new: true }
-        );
-      }
-    },
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $pull: { jobs: job._id } },
+    //       { new: true }
+    //     );
+    //   }
+    // },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
