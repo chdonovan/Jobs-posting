@@ -20,12 +20,12 @@ const Home = () => {
                     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                         <div className="rounded-md shadow">
                         <a>
-                            <NavLink exact to='/Signup' className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-400 hover:bg-red-500 md:py-4 md:text-lg md:px-10 nav-link" replace>Sign up</NavLink>
+                            <NavLink exact to='/Signup' className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base rounded-md text-white font-bold bg-cust-orange hover:bg-red-400 md:py-4 md:text-lg md:px-10 nav-link" replace>Sign up</NavLink>
                         </a>
                         </div>
                         <div className="mt-3 sm:mt-0 sm:ml-3">
                         <a>
-                            <NavLink exact to='/Login' className="nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-600 bg-gray-100 hover:bg-gray-200 md:py-4 md:text-lg md:px-10" replace>Login</NavLink>
+                            <NavLink exact to='/Login' className="nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-gray-600 bg-gray-100 hover:bg-gray-200 md:py-4 md:text-lg md:px-10" replace>Login</NavLink>
                         </a>
                         </div>
                     </div>

@@ -136,7 +136,7 @@ const JobPosting = () => {
             </div>
 
             <div className='my-2 w-full mx-auto'>
-              <p className='text-center font-bold text-gray-700 bg-cust-orange py-2 mx-52 rounded-xl shadow-lg'>Submit</p>
+              <p className='text-center font-bold text-gray-700 bg-cust-orange py-2 mx-52 rounded-xl shadow-lg hover:bg-red-400'>Submit</p>
               <div className=''></div>
             </div>
           </div>

@@ -23,9 +23,9 @@ const Nav = () => {
 //     { name: 'Logout', href: '#', current: false },
 // ]
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+// function classNames(...classes) {
+//     return classes.filter(Boolean).join(' ')
+//}
 
 
 
