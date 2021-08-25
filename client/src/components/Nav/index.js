@@ -98,9 +98,16 @@ function classNames(...classes) {
                             >
                               <Menu.Items className='h-screen origin-top-left absolute left-0 w-16 py-1 bg-gray-300 bg-opacity-25 focus:outline-none'>
                                 <Menu.Item>
-                                  <li className='block px-4 py-2 text-sm text-gray-700'>
-                                    Dashboard icon
-                                  </li>
+                                  <a key='settings'>
+                                    <NavLink
+                                      exact
+                                      to='/Dashboard'
+                                      className='block px-4 py-2 text-sm text-gray-700'
+                                      replace
+                                    >
+                                      Dashboard icon
+                                    </NavLink>
+                                  </a>
                                 </Menu.Item>
                                 <Menu.Item>
                                   <li className='block px-4 py-2 text-sm text-gray-700'>
@@ -163,7 +170,7 @@ function classNames(...classes) {
                         <Route path='/Dashboard' component={Dashboard} />
                         <Route path='/Settings' component={Settings} />
                       </Switch>
-                      </div>
+                    </div>
                   </>
                 ) : (
                   <div>
@@ -244,12 +251,6 @@ function classNames(...classes) {
                         <Route exact path='/' component={Home} />
                         <Route path='/Login' component={Login} />
                         <Route path='/Signup' component={Signup} />
-                        <Route path='/Main' component={Main} />
-                        <Route path='/Dashboard' component={Dashboard} />
-                        {/*
-                        <Route path='/Settings' component={Settings} />
-                        <Route path='/Dashboard' component={Dashboard} />
-                        */}
                       </Switch>
                     </div>
                   </div>

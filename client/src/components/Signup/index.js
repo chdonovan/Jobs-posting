@@ -23,16 +23,6 @@ const SignupForm = () => {
     });
   };
 
-  // const handleFormSubmit = async event => {
-  //   event.preventDefault();
-
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
-
-  // submit form
   const handleFormSubmit = async event => {
     event.preventDefault();
     console.log(formState, 'test123');
@@ -61,6 +51,9 @@ const SignupForm = () => {
           <form className="mt-8 space-y-6" onSubmit={handleFormSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
+
+
+              
               {/* NEED TO DRY CODE BELOW */}
 
               <div>
