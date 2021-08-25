@@ -31,3 +31,23 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+
+export const ADD_JOB = gql`
+  mutation addJob(
+    $title: String
+    $price: String
+    $description: String
+  ) {
+    addJob(
+      title: $title
+      price: $price
+      description: $description
+    ) {
+      _id
+      title
+      price
+      description
+    }
+  }
+`;
