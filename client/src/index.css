@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	
+	--darkgray: #484747;
+	--mediumgray: #929292;
+	--lightgray: #D8D8D8;
+	--palegray: #F3F3F3; 
+	--yellow: #ffaf74;
+	--orange: #f58c73;
+	--red: #D67676;
+	--blue: #0082ac;
+	--light-blue: #55b4d1;
+	
+
+
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.cust-orange {
+	color: var(--orange);
+}
+.cust-red {
+	color: var(--red);
+}
+.cust-yellow {
+	color: var(--yellow);
+}
+
+
+.btn-cust-yellow {
+	background-color: var(--yellow);
+}
+.btn-cust-yellow:hover {
+	background-color: var(--orange);
+}
+
+.btn-cust-orange {
+	background-color: var(--orange);
+}
+.btn-cust-orange:hover {
+	background-color: var(--yellow);
+}
+
+
+.bg-cust-yellow {
+		background-color: var(--yellow);
+}
+.bg-cust-orange {
+		background-color: var(--orange);
+}
+.bg-cust-red {
+		background-color: var(--red);
+}
+
+
+.btn-main-yellow {
+	background-color: var(--yellow);
+}
+.btn-main-yellow:hover {
+	background-color:rgb(255, 189, 131);
+}
+
+.btn-main-orange {
+	background-color: var(--orange);
+}
+.btn-main-orange:hover {
+	background-color:rgb(255, 157, 128);
+}
+
+
+.cust-font {
+	font-family: 'Monda', sans-serif;
+}
+
+.bg-city{
+    position:fixed;
+    bottom:0px;
+		z-index: -1;
+}
+
+.lg-map-placeholder {
+	object-fit: cover;
+	position: absolute;
+  left: 0;
+  bottom: 0;
+}
