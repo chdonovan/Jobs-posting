@@ -13,6 +13,11 @@ const Settings = () => {
 };
 */
 const Settings = () => {
+  /*
+  Add logic to settings
+  Be able to grab the Users Email and Password and display it after they're logged in
+  Add ability to edit the the Email and Password
+  */
   return (
     <div>
       <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
