@@ -45,7 +45,7 @@ const Main = () => {
           </a>
         </div>
       </div>
-      <div className="bg-cover">
+      <div className="w-24 min-w-full">
         <img src={skyline} />
       </div>
     </div>
