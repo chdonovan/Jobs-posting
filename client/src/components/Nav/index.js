@@ -206,11 +206,11 @@ function classNames(...classes) {
                                 <a key='about'>
                                   <NavLink
                                     exact
-                                    to='/'
+                                    to='/Settings'
                                     className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
-                                    Contact Us
+                                    Contact Us GOES SETTINGS FIX LATER
                                   </NavLink>
                                 </a>
                                 <a key='about' href='#faq'>
@@ -246,8 +246,9 @@ function classNames(...classes) {
                         <Route path='/Signup' component={Signup} />
                         <Route path='/Main' component={Main} />
                         <Route path='/Dashboard' component={Dashboard} />
-                        {/*
                         <Route path='/Settings' component={Settings} />
+                        {/*
+                        
                         <Route path='/Dashboard' component={Dashboard} />
                         */}
                       </Switch>

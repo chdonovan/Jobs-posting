@@ -1,9 +1,11 @@
 import React from 'react';
+import Settings from '../components/Settings';
+
 
 const Settings = () => {
   return (
     <div>
-      <p>Settings page</p>
+      <Settings />
     </div>
   );
 };
