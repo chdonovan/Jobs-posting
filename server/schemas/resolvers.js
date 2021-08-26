@@ -2,18 +2,14 @@ const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 const { User, Job } = require('../models');
 
-
-
-
-
 const resolvers = {
   Query: {
     // categories: async () => {
     //   return await Category.find();
     // },
-  //     jobs: async () => {
-  //     return await Job.find();
-  // },
+    //     jobs: async () => {
+    //     return await Job.find();
+    // },
 
     // jobs: async (parent, { category, name }) => {
     //   const params = {};
@@ -35,8 +31,8 @@ const resolvers = {
     //     user.job.sort((a, b) => b.createdDate - a.createdDate);
 
     //     return user;
-      //  }
-      // },
+    //  }
+    // },
     // users: async () => {
     //   return User.find().select('-__v -password').populate('jobs');
     // },
@@ -61,42 +57,40 @@ const resolvers = {
       return { token, user };
     },
     addJob: async (parent, args, context) => {
+      console.log(args, 'does this work?');
+      console.log(context.user, 'context test');
       if (context.user) {
-        const Job = await Job.create(args);
+        const job = await Job.create(args);
+        console.log(job, 'this is the job');
+        await Job.findByIdAndUpdate({ _id: job._id }, { new: true });
 
-        
-        await Job.findByIdAndUpdate(
-            {_id: Job._id },
-            { new: true }
-        );
-
-        return {Job};
+        return { job };
       }
 
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
-    // updateUser: async (parent, args, context) => {
-    //   if (context.user) {
-    //     return await user.findByIdAndUpdate(context.user._id, args, { new: true });
-    //   }
-    //   throw new AuthenticationError('You are not logged in!');
-    // },
-    // updatedJob: async (parent, args, context) => {
-    //   if (context.job) {
-    //     return await job.findByIdAndUpdate(context.job._id, args, { new: true });
-    //   }
-    //   throw new AuthenticationError('You must be logged in!');
-    // },
-    // removeJob: async (parent, args, context) => {
-    //   if (context.user) {
-    //     const job = await Job.remove({ ...args, username: context.user.username });
+      //   throw new AuthenticationError('You need to be logged in!');
+      // },
+      // updateUser: async (parent, args, context) => {
+      //   if (context.user) {
+      //     return await user.findByIdAndUpdate(context.user._id, args, { new: true });
+      //   }
+      //   throw new AuthenticationError('You are not logged in!');
+      // },
+      // updatedJob: async (parent, args, context) => {
+      //   if (context.job) {
+      //     return await job.findByIdAndUpdate(context.job._id, args, { new: true });
+      //   }
+      //   throw new AuthenticationError('You must be logged in!');
+      // },
+      // removeJob: async (parent, args, context) => {
+      //   if (context.user) {
+      //     const job = await Job.remove({ ...args, username: context.user.username });
 
-    //     await User.findByIdAndUpdate(
-    //       { _id: context.user._id },
-    //       { $pull: { jobs: job._id } },
-    //       { new: true }
-    //     );
-    //   }
+      //     await User.findByIdAndUpdate(
+      //       { _id: context.user._id },
+      //       { $pull: { jobs: job._id } },
+      //       { new: true }
+      //     );
+      //   }
     },
 
     login: async (parent, { email, password }) => {
@@ -124,7 +118,6 @@ const resolvers = {
     //   }
 
     //   throw new AuthenticationError('You must be logged in!');
-    
   },
 };
 module.exports = resolvers;
