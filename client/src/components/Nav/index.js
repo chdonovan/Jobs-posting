@@ -5,12 +5,18 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import Auth from "../../utils/auth";
 import logo from '../../assets/images/logo.png'
 
+import { BsBriefcase } from 'react-icons/bs';
+import { IoSettingsOutline, IoHomeOutline } from 'react-icons/io5';
+import { VscSignOut } from 'react-icons/vsc';
+
+
 import Home from '../../pages/Home'
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 import Main from '../../pages/Main'
 import Dashboard from "../../pages/Dashboard";
 import Settings from '../../pages/Settings';
+import JobPosting from "../../pages/JobPosting";
 
 const Nav = () => {
 
@@ -22,9 +28,9 @@ const Nav = () => {
 //     { name: 'Logout', href: '#', current: false },
 // ]
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+// function classNames(...classes) {
+//     return classes.filter(Boolean).join(' ')
+//}
 
 
 
@@ -98,15 +104,34 @@ function classNames(...classes) {
                             >
                               <Menu.Items className='h-screen origin-top-left absolute left-0 w-16 py-1 bg-gray-300 bg-opacity-25 focus:outline-none'>
                                 <Menu.Item>
-                                  <li className='block px-4 py-2 text-sm text-gray-700'>
-                                    Dashboard icon
-                                  </li>
+                                  <a key='home-page'>
+                                    <NavLink
+                                      exact
+                                      to='/'
+                                      className='block px-4 py-2 text-sm text-gray-700'
+                                      replace
+                                    >
+                                      <IoHomeOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
+                                    </NavLink>
+                                  </a>
                                 </Menu.Item>
                                 <Menu.Item>
-                                  <li className='block px-4 py-2 text-sm text-gray-700'>
-                                    Calendar icon
-                                  </li>
+                                  <a key='settings'>
+                                    <NavLink
+                                      exact
+                                      to='/Dashboard'
+                                      className='block px-4 py-2 text-sm text-gray-700'
+                                      replace
+                                    >
+                                      <BsBriefcase className='my-2 h-7 w-8 text-gray-600 hover:text-gray-700' />
+                                    </NavLink>
+                                  </a>
                                 </Menu.Item>
+                                {/* <Menu.Item>
+                                  <li className='block px-4 py-2 text-sm text-gray-700'>
+                                    <p>Calendar icon</p>
+                                  </li>
+                                </Menu.Item> */}
                                 <Menu.Item>
                                   <a key='settings'>
                                     <NavLink
@@ -115,7 +140,7 @@ function classNames(...classes) {
                                       className='block px-4 py-2 text-sm text-gray-700'
                                       replace
                                     >
-                                      Settings icon
+                                      <IoSettingsOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
                                   </a>
                                 </Menu.Item>
@@ -124,7 +149,7 @@ function classNames(...classes) {
                                     className='block px-4 py-2 text-sm text-gray-700'
                                     onClick={Auth.logout}
                                   >
-                                    Sign out icon
+                                    <VscSignOut className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                   </li>
                                 </Menu.Item>
                               </Menu.Items>
@@ -137,15 +162,19 @@ function classNames(...classes) {
                           <img className=' h-14' src={logo} alt='Logo' />
                         </div>
                       </div>
-                      <div className='relative flex mt-3 mr-7'>
-                        <div className='profile'>
+                      <div className='relative flex mt-3 mr-14 items-center'>
+                        <div className='mr-5'>
                           <div>
-                            <p>name</p>
-                            <p>stars</p>
+                            <p className='cust-font font-bold text-gray-600'>
+                              NICOLAS CAGE
+                            </p>
+                            <p className='text-gray-500 flex justify-end'>
+                              ★★★☆☆
+                            </p>
                           </div>
                         </div>
-                        <div>
-                          <span className='inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100'>
+                        <div className='border rounded-full border-gray-300'>
+                          <span className='flex inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100'>
                             <svg
                               className='h-full w-full text-gray-300'
                               fill='currentColor'
@@ -162,8 +191,9 @@ function classNames(...classes) {
                         <Route exact path='/' component={Main} />
                         <Route path='/Dashboard' component={Dashboard} />
                         <Route path='/Settings' component={Settings} />
+                        <Route path='/JobPosting' component={JobPosting} />
                       </Switch>
-                      </div>
+                    </div>
                   </>
                 ) : (
                   <div>
@@ -206,11 +236,11 @@ function classNames(...classes) {
                                 <a key='about'>
                                   <NavLink
                                     exact
-                                    to='/Settings'
+                                    to='/'
                                     className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
                                     replace
                                   >
-                                    Contact Us GOES SETTINGS FIX LATER
+                                    Contact Us
                                   </NavLink>
                                 </a>
                                 <a key='about' href='#faq'>
@@ -244,13 +274,6 @@ function classNames(...classes) {
                         <Route exact path='/' component={Home} />
                         <Route path='/Login' component={Login} />
                         <Route path='/Signup' component={Signup} />
-                        <Route path='/Main' component={Main} />
-                        <Route path='/Dashboard' component={Dashboard} />
-                        <Route path='/Settings' component={Settings} />
-                        {/*
-                        
-                        <Route path='/Dashboard' component={Dashboard} />
-                        */}
                       </Switch>
                     </div>
                   </div>
