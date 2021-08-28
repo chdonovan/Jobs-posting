@@ -22,7 +22,6 @@ const Home = () => {
             </p>
             <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
               <div className='rounded-md shadow'>
-                <a>
                   <NavLink
                     exact
                     to='/Signup'
@@ -31,10 +30,8 @@ const Home = () => {
                   >
                     Sign up
                   </NavLink>
-                </a>
               </div>
               <div className='mt-3 sm:mt-0 sm:ml-3'>
-                <a>
                   <NavLink
                     exact
                     to='/Login'
@@ -43,13 +40,12 @@ const Home = () => {
                   >
                     Login
                   </NavLink>
-                </a>
               </div>
             </div>
           </div>
         </main>
         <div className='hero-img lg:absolute lg:inset-y-60 lg:right-12 lg:w-7/12'>
-          <img src={picture} />
+          <img alt='avatar' src={picture} />
         </div>
       </div>
     );

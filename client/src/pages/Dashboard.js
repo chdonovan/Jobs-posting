@@ -74,7 +74,7 @@ const Dashboard = () => {
           </div>
 
           <div className='m-auto mr-5 map'>
-            <img src={map} className='rounded-lg h-auto w-44' />
+            <img alt='map' src={map} className='rounded-lg h-auto w-44' />
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ const Dashboard = () => {
           </div>
 
           <div className='m-auto mr-5 map'>
-            <img src={map} className='rounded-lg h-auto w-44' />
+            <img alt='map' src={map} className='rounded-lg h-auto w-44' />
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@ const Dashboard = () => {
           </div>
 
           <div className='m-auto mr-5 map'>
-            <img src={map} className='rounded-lg h-auto w-44' />
+            <img alt='map' src={map} className='rounded-lg h-auto w-44' />
           </div>
         </div>
       </div>
