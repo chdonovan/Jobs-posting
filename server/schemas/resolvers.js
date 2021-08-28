@@ -56,15 +56,18 @@ const resolvers = {
 
       return { token, user };
     },
-    addJob: async (parent, args, context) => {
-      console.log(args, 'does this work?');
-      console.log(context.user, 'context test');
-      if (context.user) {
-        const job = await Job.create(args);
-        console.log(job, 'this is the job');
-        await Job.findByIdAndUpdate({ _id: job._id }, { new: true });
 
-        return { job };
+    addJob: async (parent, args, context) => {
+      if (context.user) {
+        const job = await Job.create({ ...args, username: context.user.username });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { jobs: job._id } },
+          { new: true }
+        );
+
+        return job;
       }
 
       //   throw new AuthenticationError('You need to be logged in!');
