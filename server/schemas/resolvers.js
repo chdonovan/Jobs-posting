@@ -109,6 +109,18 @@ const resolvers = {
       //   }
     },
 
+    removeJob: async (parent, args, context) => {
+        if (context.user) {
+          const job = await Job.remove({ ...args, username: context.user.username });
+
+          await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $pull: { jobs: job._id } },
+            { new: true }
+          );
+        }
+    },
+
     login: async (parent, { email, password }) => {
       console.log('this is a test');
       const user = await User.findOne({ email });

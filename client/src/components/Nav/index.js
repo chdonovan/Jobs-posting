@@ -19,6 +19,7 @@ import Main from '../../pages/Main'
 import Dashboard from "../../pages/Dashboard";
 import Settings from '../../pages/Settings';
 import JobPosting from "../../pages/JobPosting";
+import MyJobs from "../MyJobs/index"
 
 const Nav = () => {
 
@@ -167,6 +168,13 @@ const Nav = () => {
                         </div>
                       </div>
                       <div className='relative flex mt-3 mr-14 items-center'>
+                        <div className='mt-3 mr-14 cust-font font-bold text-gray-600'>
+                          <button>
+                            <NavLink exact to='/Myjobs'>
+                                My Jobs
+                              </NavLink>
+                          </button>
+                        </div>
                         <div className='mr-5'>
                           <div>
                             <p className='cust-font font-bold text-gray-600'>
@@ -197,6 +205,7 @@ const Nav = () => {
                         <Route path='/Dashboard' component={Dashboard} />
                         <Route path='/Settings' component={Settings} />
                         <Route path='/JobPosting' component={JobPosting} />
+                        <Route path='/Myjobs' component={MyJobs} />
                       </Switch>
                     </div>
                   </>
