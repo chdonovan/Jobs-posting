@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Main = () => {
   return (
@@ -11,16 +11,14 @@ const Main = () => {
       <div className='mt-5 sm:mt-8 sm:flex justify-around'>
         <div className='grid justify-items-center'>
           <div className='w-60 mt-3 sm:mt-0'>
-            <a>
-              <Link
+              <NavLink
                 exact
                 to='/JobPosting'
                 className='btn-main-yellow font-bold flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-gray-600 md:py-4 md:text-lg md:px-10 nav-link'
                 replace
               >
                 I need help
-              </Link>
-            </a>
+              </NavLink>
           </div>
           <p className='mt-3 lg:text-base text-center text-base text-gray-500 sm:mt-5 sm:text-lg  mx-auto md:mt-5 md:text-xl justify-center border-opacity-0'>
             Create listing. Set your price.
@@ -29,16 +27,14 @@ const Main = () => {
         </div>
         <div className='grid justify-items-center'>
           <div className='w-60 mt-3 sm:mt-0'>
-            <a>
-              <Link
+              <NavLink
                 exact
                 to='/Dashboard'
                 className='btn-main-orange font-bold nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-lg text-gray-600 md:py-4 md:text-lg md:px-10'
                 replace
               >
                 I want to help
-              </Link>
-            </a>
+              </NavLink>
           </div>
           <p className='mt-3 lg:text-base text-center text-base text-gray-500 sm:mt-5 sm:text-lg  mx-auto md:mt-5 md:text-xl justify-center '>
             Need some cash? Easy-peasy!

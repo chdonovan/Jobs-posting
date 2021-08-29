@@ -9,6 +9,8 @@ import { BsBriefcase } from 'react-icons/bs';
 import { IoSettingsOutline, IoHomeOutline } from 'react-icons/io5';
 import { VscSignOut } from 'react-icons/vsc';
 
+// import { useQuery } from '@apollo/client';
+// import { QUERY_ME } from '../../utils/queries'
 
 import Home from '../../pages/Home'
 import Login from '../../pages/Login';
@@ -20,6 +22,7 @@ import JobPosting from "../../pages/JobPosting";
 
 const Nav = () => {
 
+  // const { data: userData } = useQuery(QUERY_ME);
 // const navigation = [
 //     { name: 'Main', href: '#', current: true },
 //     { name: 'Dashboard', href: '#', current: false },
@@ -51,6 +54,7 @@ const Nav = () => {
                     </NavLink>
                   </a>
                   <a
+                    href='/'
                     key='contact'
                     className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >
@@ -68,6 +72,7 @@ const Nav = () => {
                     </NavLink>
                   </a>
                   <a
+                  href='/Login'
                     key='login'
                     className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                   >
@@ -104,7 +109,6 @@ const Nav = () => {
                             >
                               <Menu.Items className='h-screen origin-top-left absolute left-0 w-16 py-1 bg-gray-300 bg-opacity-25 focus:outline-none'>
                                 <Menu.Item>
-                                  <a key='home-page'>
                                     <NavLink
                                       exact
                                       to='/'
@@ -113,10 +117,8 @@ const Nav = () => {
                                     >
                                       <IoHomeOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
-                                  </a>
                                 </Menu.Item>
                                 <Menu.Item>
-                                  <a key='settings'>
                                     <NavLink
                                       exact
                                       to='/Dashboard'
@@ -125,7 +127,6 @@ const Nav = () => {
                                     >
                                       <BsBriefcase className='my-2 h-7 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
-                                  </a>
                                 </Menu.Item>
                                 {/* <Menu.Item>
                                   <li className='block px-4 py-2 text-sm text-gray-700'>
@@ -133,7 +134,6 @@ const Nav = () => {
                                   </li>
                                 </Menu.Item> */}
                                 <Menu.Item>
-                                  <a key='settings'>
                                     <NavLink
                                       exact
                                       to='/Settings'
@@ -142,7 +142,6 @@ const Nav = () => {
                                     >
                                       <IoSettingsOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                     </NavLink>
-                                  </a>
                                 </Menu.Item>
                                 <Menu.Item>
                                   <li
@@ -223,7 +222,6 @@ const Nav = () => {
                           <div className='hidden sm:block sm:ml-6'>
                             <div className='flex space-x-4'>
                               <div>
-                                <a key='about' href='#about'>
                                   <NavLink
                                     exact
                                     to='/'
@@ -232,8 +230,6 @@ const Nav = () => {
                                   >
                                     About
                                   </NavLink>
-                                </a>
-                                <a key='about'>
                                   <NavLink
                                     exact
                                     to='/'
@@ -242,8 +238,6 @@ const Nav = () => {
                                   >
                                     Contact Us
                                   </NavLink>
-                                </a>
-                                <a key='about' href='#faq'>
                                   <NavLink
                                     exact
                                     to='/'
@@ -252,8 +246,6 @@ const Nav = () => {
                                   >
                                     FAQ
                                   </NavLink>
-                                </a>
-                                <a key='about'>
                                   <NavLink
                                     exact
                                     to='/Login'
@@ -262,7 +254,6 @@ const Nav = () => {
                                   >
                                     Login
                                   </NavLink>
-                                </a>
                               </div>
                             </div>
                           </div>

@@ -22,34 +22,30 @@ const Home = () => {
             </p>
             <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
               <div className='rounded-md shadow'>
-                <a>
-                  <NavLink
-                    exact
-                    to='/Signup'
-                    className='btn-main-yellow w-full flex items-center justify-center px-8 py-3 border border-transparent text-base rounded-md text-white font-bold bg-cust-orange hover:bg-red-400 md:py-4 md:text-lg md:px-10 nav-link'
-                    replace
-                  >
-                    Sign up
-                  </NavLink>
-                </a>
+                <NavLink
+                  exact
+                  to='/Signup'
+                  className='shadow-lg btn-main-yellow w-full flex items-center justify-center px-8 py-3 border border-transparent text-base rounded-md text-white font-bold bg-cust-orange hover:bg-red-400 md:py-4 md:text-lg md:px-10 nav-link'
+                  replace
+                >
+                  Sign up
+                </NavLink>
               </div>
               <div className='mt-3 sm:mt-0 sm:ml-3'>
-                <a>
-                  <NavLink
-                    exact
-                    to='/Login'
-                    className='nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-gray-600 bg-gray-100 hover:bg-gray-200 md:py-4 md:text-lg md:px-10'
-                    replace
-                  >
-                    Login
-                  </NavLink>
-                </a>
+                <NavLink
+                  exact
+                  to='/Login'
+                  className='shadow-lg nav-link w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-gray-600 bg-gray-100 hover:bg-gray-200 md:py-4 md:text-lg md:px-10'
+                  replace
+                >
+                  Login
+                </NavLink>
               </div>
             </div>
           </div>
         </main>
         <div className='hero-img lg:absolute lg:inset-y-60 lg:right-12 lg:w-7/12'>
-          <img src={picture} />
+          <img alt='avatar' src={picture} />
         </div>
       </div>
     );

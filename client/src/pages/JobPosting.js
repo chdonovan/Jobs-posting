@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import map from '../assets/images/lg-map-placeholder.jpg'
+//import map from '../assets/images/lg-map-placeholder.jpg'
 import {useMutation} from '@apollo/client'
 import { ADD_JOB } from '../utils/mutations'
 
