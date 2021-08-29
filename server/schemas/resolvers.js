@@ -11,15 +11,24 @@ const resolvers = {
     //     return await Job.find();
     // },
 
-    // jobs: async (parent, { category, name }) => {
-    //   const params = {};
-    //   if (category) {
-    //     params.category = category;
-    //   }
-    // },
+    jobs: async (parent, { _id }) => {
+      const params = _id ? { _id } : {};
+      return Job.find(params)
+      // if (category) {
+      //   params.category = category;
+      // }
+    },
     job: async (parent, { _id }) => {
       return await Job.findById(_id);
     },
+
+    user: async (parent, { email }) => {
+      return User.findOne({ email })
+      .select('-_v -password')
+      .populate('jobs')
+    },
+
+
     // user: async (parent, args, context) => {
     //   if (context.user) {
     //     const user = await User.findById(context.user._id).populate({
@@ -33,9 +42,9 @@ const resolvers = {
     //     return user;
     //  }
     // },
-    // users: async () => {
-    //   return User.find().select('-__v -password').populate('jobs');
-    // },
+    users: async () => {
+      return User.find().select('-__v -password').populate('jobs');
+    },
 
     me: async (parent, args, context) => {
       if (context.user) {
@@ -59,7 +68,11 @@ const resolvers = {
 
     addJob: async (parent, args, context) => {
       if (context.user) {
-        const job = await Job.create({ ...args, username: context.user.username });
+        const job = await Job.create({
+          ...args,
+          firstName: context.user.firstName,
+          lastName: context.user.lastName
+        });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },

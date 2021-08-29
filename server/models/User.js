@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Job = require('./Jobs');
+//const Job = require('./Jobs');
 
 const userSchema = new Schema(
   {
@@ -26,7 +26,12 @@ const userSchema = new Schema(
       required: true,
       minlength: 5,
     },
-    jobs: [Job.schema],
+    jobs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Job"
+      }
+    ],
   },
   {
     toJSON: {

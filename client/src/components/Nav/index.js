@@ -9,6 +9,8 @@ import { BsBriefcase } from 'react-icons/bs';
 import { IoSettingsOutline, IoHomeOutline } from 'react-icons/io5';
 import { VscSignOut } from 'react-icons/vsc';
 
+// import { useQuery } from '@apollo/client';
+// import { QUERY_ME } from '../../utils/queries'
 
 import Home from '../../pages/Home'
 import Login from '../../pages/Login';
@@ -20,6 +22,7 @@ import JobPosting from "../../pages/JobPosting";
 
 const Nav = () => {
 
+  // const { data: userData } = useQuery(QUERY_ME);
 // const navigation = [
 //     { name: 'Main', href: '#', current: true },
 //     { name: 'Dashboard', href: '#', current: false },

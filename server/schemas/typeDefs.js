@@ -6,9 +6,12 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    jobs: [Job]
   }
   type Job {
     _id: ID
+    firstName: String
+    lastName: String
     title: String
     description: String
     price: String
@@ -20,7 +23,10 @@ const typeDefs = gql`
   }
   type Query {
     me: User
+    users: [User]
+    user(email: String): User
     job: Job
+    jobs(_id: String): [Job]
   }
   type Mutation {
     addUser(
