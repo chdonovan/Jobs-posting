@@ -18,7 +18,7 @@ const JobList = ({ jobs, title }) => {
                 <div>
                   <div className='flex justify-between block text-xl font-medium text-gray-700'>
                     <p>{job.title}</p>
-                    <p className='cust-font'>{job.price}</p>
+                    <p className='cust-font'>${job.price}</p>
                   </div>
                   <div className='mt-1 flex'>
                     <div>

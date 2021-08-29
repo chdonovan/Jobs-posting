@@ -7,10 +7,13 @@ export const QUERY_ME = gql`
       firstName
       lastName
       email
-      jobCount
+      
       jobs {
         _id
         title
+        description
+        price
+        location
       }
     }
   }
