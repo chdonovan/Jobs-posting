@@ -79,11 +79,11 @@ const JobPosting = () => {
                 <p className='font-bold text-gray-700'>JOB DETAILS</p>
                 <p className='text-gray-500 mt-1'>Add a detailed description</p>
                 <div className=''>
-                  <div className='flex mt-5'>
+                  <div className='flex mt-5 items-center'>
                     <div className='flex-1 mr-3'>
                       <label
                         htmlFor='title'
-                        className='block text-sm font-medium text-gray-700'
+                        className=' text-sm font-medium text-gray-700'
                       >
                         Title
                       </label>
@@ -106,15 +106,20 @@ const JobPosting = () => {
                       >
                         Price
                       </label>
-                      <input
-                        type='text'
-                        name='price'
-                        id='price'
-                        className='focus:ring-gray-400 focus:border-gray-400 w-full rounded-none rounded-md sm:text-sm border-gray-300'
-                        placeholder='Set your price'
-                        value={formState.price}
-                        onChange={handleChange}
-                      />
+                      <div className='mt-1 flex rounded-md shadow-sm'>
+                        <span className='inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm'>
+                          $
+                        </span>
+                        <input
+                          type='text'
+                          name='price'
+                          id='price'
+                          className='focus:ring-gray-400 focus:border-gray-400 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300'
+                          placeholder='Set your price'
+                          value={formState.price}
+                          onChange={handleChange}
+                        />
+                      </div>
                     </div>
                   </div>
                   <div className='w-full mt-3'>
