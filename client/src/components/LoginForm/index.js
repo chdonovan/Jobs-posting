@@ -46,10 +46,8 @@ const LoginForm = props => {
                     <HashRouter>
                         <p className="mt-2 text-center text-sm text-gray-600">
                             Don't have an account yet?{' '}
-                            <NavLink exact to="/Signup" className="nav-link" replace>
-                                <a href="#" className="text-blue-400 font-medium">
+                            <NavLink exact to="/Signup" className="nav-link text-blue-400 font-medium" replace>
                                     Create one!
-                                </a>
                             </NavLink>
 
                             <Switch>

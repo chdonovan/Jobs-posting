@@ -51,6 +51,8 @@ export const ADD_JOB = gql`
       price
       description
       location
+      firstName
+      lastName
     }
   }
 `;

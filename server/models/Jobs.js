@@ -28,6 +28,12 @@ const jobSchema = new Schema(
     location: {
       type: String,
     },
+    firstName: {
+      type: String,
+    },
+    lastName: {
+      type: String,
+    },
     // createdAt: {
     //   type: Date,
     //   default: Date.now,
