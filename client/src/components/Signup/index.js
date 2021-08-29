@@ -3,6 +3,7 @@ import { LockClosedIcon } from '@heroicons/react/solid';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 
+
 import Auth from '../../utils/auth';
 
 const SignupForm = () => {
@@ -12,7 +13,7 @@ const SignupForm = () => {
     email: '',
     password: '',
   });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleChange = event => {
         const { name, value } = event.target;
@@ -116,7 +117,11 @@ const SignupForm = () => {
                 />
               </div>
             </div>
-
+            {error && (
+              <div className='text-red-700 text-center text-sm'>
+                Sign up failed
+              </div>
+            )}
             <div className='flex justify-center'>
               <button
                 type='submit'
