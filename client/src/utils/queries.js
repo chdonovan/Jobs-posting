@@ -31,3 +31,21 @@ export const QUERY_JOBS = gql`
     }
   }
 `;
+
+export const QUERY_USER = gql`
+  query {
+    User {
+      _id
+      firstName
+      lastName
+      email
+      jobs {
+        _id
+        title
+        description
+        price
+        location
+      }
+    }
+  }
+`;
