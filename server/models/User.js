@@ -1,50 +1,55 @@
-const mongoose  = require('mongoose');
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Job = require('./Jobs');
+//const Job = require('./Jobs');
 
-
-const userSchema = new Schema ({
+const userSchema = new Schema(
+  {
     firstName: {
-        type: String,
-        require: true,
-        trim: true
+      type: String,
+      require: true,
+      trim: true,
     },
     lastName: {
-       type: String,
-       required: true,
-       trim: true,
-        
+      type: String,
+      required: true,
+      trim: true,
     },
     email: {
-        type: String,
-        required: true,
-        unique: true,
+      type: String,
+      required: true,
+      unique: true,
     },
     password: {
-        type: String,
-        required: true,
-        minlength: 5
+      type: String,
+      required: true,
+      minlength: 5,
     },
-    job: [Job.schema]
-},
-{
+    jobs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Job"
+      }
+    ],
+  },
+  {
     toJSON: {
       virtuals: true,
     },
-  });
+  }
+);
 
-userSchema.pre('save', async function(next){
-    if (this.isNew || this.isModified('password')) {
-        const saltRounds = 10;
-        this.password = await bcrypt.hash(this.password, saltRounds);
-    }
-    next();
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+  next();
 });
 
-userSchema.methods.isCorrectPassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
+userSchema.methods.isCorrectPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
 };
 
 const User = mongoose.model('User', userSchema);

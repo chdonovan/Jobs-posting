@@ -9,6 +9,8 @@ import { BsBriefcase } from 'react-icons/bs';
 import { IoSettingsOutline, IoHomeOutline } from 'react-icons/io5';
 import { VscSignOut } from 'react-icons/vsc';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../../utils/queries'
 
 import Home from '../../pages/Home'
 import Login from '../../pages/Login';
@@ -17,8 +19,19 @@ import Main from '../../pages/Main'
 import Dashboard from "../../pages/Dashboard";
 import Settings from '../../pages/Settings';
 import JobPosting from "../../pages/JobPosting";
+import MyJobs from "../MyJobs/index"
 
 const Nav = () => {
+
+  const { data } = useQuery(QUERY_ME) 
+  console.log(data, 'this is user data')
+
+  const loggedIn = Auth.loggedIn();
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
 // const navigation = [
 //     { name: 'Main', href: '#', current: true },
@@ -41,45 +54,43 @@ const Nav = () => {
             <>
               <Disclosure.Panel className='sm:hidden'>
                 <div className='px-2 pt-2 pb-3 space-y-1'>
-                  <a
-                    key='about'
-                    href='#about'
-                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                  <NavLink
+                    exact
+                    to='/'
+                    className='nav-link text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    replace
                   >
-                    <NavLink exact to='/' className='nav-link' replace>
-                      About
-                    </NavLink>
-                  </a>
-                  <a
-                    key='contact'
-                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    About
+                  </NavLink>
+                  <NavLink
+                    exact
+                    to='/'
+                    className='nav-link text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    replace
                   >
-                    <NavLink exact to='/' className='nav-link' replace>
-                      Contact Us
-                    </NavLink>
-                  </a>
-                  <a
-                    key='faq'
-                    href='#faq'
-                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    Contact Us
+                  </NavLink>
+                  <NavLink
+                    exact
+                    to='/'
+                    className='nav-link text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    replace
                   >
-                    <NavLink exact to='/' className='nav-link' replace>
-                      FAQ
-                    </NavLink>
-                  </a>
-                  <a
-                    key='login'
-                    className='text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                  >
-                    <NavLink exact to='/Login' className='nav-link' replace>
+                    FAQ
+                  </NavLink>
+                    <NavLink
+                      exact
+                      to='/Login'
+                      className='nav-link text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                      replace
+                    >
                       Login
                     </NavLink>
-                  </a>
                 </div>
               </Disclosure.Panel>
 
               <div>
-                {Auth.loggedIn() ? (
+                {loggedIn && data ? (
                   <>
                     {/* Menu dropdown */}
                     <div className='relative flex justify-between'>
@@ -104,28 +115,24 @@ const Nav = () => {
                             >
                               <Menu.Items className='h-screen origin-top-left absolute left-0 w-16 py-1 bg-gray-300 bg-opacity-25 focus:outline-none'>
                                 <Menu.Item>
-                                  <a key='home-page'>
-                                    <NavLink
-                                      exact
-                                      to='/'
-                                      className='block px-4 py-2 text-sm text-gray-700'
-                                      replace
-                                    >
-                                      <IoHomeOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
-                                    </NavLink>
-                                  </a>
+                                  <NavLink
+                                    exact
+                                    to='/'
+                                    className='block px-4 py-2 text-sm text-gray-700'
+                                    replace
+                                  >
+                                    <IoHomeOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
+                                  </NavLink>
                                 </Menu.Item>
                                 <Menu.Item>
-                                  <a key='settings'>
-                                    <NavLink
-                                      exact
-                                      to='/Dashboard'
-                                      className='block px-4 py-2 text-sm text-gray-700'
-                                      replace
-                                    >
-                                      <BsBriefcase className='my-2 h-7 w-8 text-gray-600 hover:text-gray-700' />
-                                    </NavLink>
-                                  </a>
+                                  <NavLink
+                                    exact
+                                    to='/Dashboard'
+                                    className='block px-4 py-2 text-sm text-gray-700'
+                                    replace
+                                  >
+                                    <BsBriefcase className='my-2 h-7 w-8 text-gray-600 hover:text-gray-700' />
+                                  </NavLink>
                                 </Menu.Item>
                                 {/* <Menu.Item>
                                   <li className='block px-4 py-2 text-sm text-gray-700'>
@@ -133,21 +140,19 @@ const Nav = () => {
                                   </li>
                                 </Menu.Item> */}
                                 <Menu.Item>
-                                  <a key='settings'>
-                                    <NavLink
-                                      exact
-                                      to='/Settings'
-                                      className='block px-4 py-2 text-sm text-gray-700'
-                                      replace
-                                    >
-                                      <IoSettingsOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
-                                    </NavLink>
-                                  </a>
+                                  <NavLink
+                                    exact
+                                    to='/Settings'
+                                    className='block px-4 py-2 text-sm text-gray-700'
+                                    replace
+                                  >
+                                    <IoSettingsOutline className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
+                                  </NavLink>
                                 </Menu.Item>
                                 <Menu.Item>
                                   <li
                                     className='block px-4 py-2 text-sm text-gray-700'
-                                    onClick={Auth.logout}
+                                    onClick={logout}
                                   >
                                     <VscSignOut className='my-2 h-8 w-8 text-gray-600 hover:text-gray-700' />
                                   </li>
@@ -163,10 +168,18 @@ const Nav = () => {
                         </div>
                       </div>
                       <div className='relative flex mt-3 mr-14 items-center'>
+                        <div className='mt-3 mr-14 cust-font font-bold text-gray-600'>
+                          <button>
+                            <NavLink exact to='/Myjobs'>
+                                My Jobs
+                              </NavLink>
+                          </button>
+                        </div>
                         <div className='mr-5'>
                           <div>
                             <p className='cust-font font-bold text-gray-600'>
-                              NICOLAS CAGE
+                              {data.me.firstName} {}
+                              {data.me.lastName}
                             </p>
                             <p className='text-gray-500 flex justify-end'>
                               ★★★☆☆
@@ -192,6 +205,7 @@ const Nav = () => {
                         <Route path='/Dashboard' component={Dashboard} />
                         <Route path='/Settings' component={Settings} />
                         <Route path='/JobPosting' component={JobPosting} />
+                        <Route path='/Myjobs' component={MyJobs} />
                       </Switch>
                     </div>
                   </>
@@ -223,46 +237,38 @@ const Nav = () => {
                           <div className='hidden sm:block sm:ml-6'>
                             <div className='flex space-x-4'>
                               <div>
-                                <a key='about' href='#about'>
-                                  <NavLink
-                                    exact
-                                    to='/'
-                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
-                                    replace
-                                  >
-                                    About
-                                  </NavLink>
-                                </a>
-                                <a key='about'>
-                                  <NavLink
-                                    exact
-                                    to='/'
-                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
-                                    replace
-                                  >
-                                    Contact Us
-                                  </NavLink>
-                                </a>
-                                <a key='about' href='#faq'>
-                                  <NavLink
-                                    exact
-                                    to='/'
-                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
-                                    replace
-                                  >
-                                    FAQ
-                                  </NavLink>
-                                </a>
-                                <a key='about'>
-                                  <NavLink
-                                    exact
-                                    to='/Login'
-                                    className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
-                                    replace
-                                  >
-                                    Login
-                                  </NavLink>
-                                </a>
+                                <NavLink
+                                  exact
+                                  to='/'
+                                  className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
+                                  replace
+                                >
+                                  About
+                                </NavLink>
+                                <NavLink
+                                  exact
+                                  to='/'
+                                  className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
+                                  replace
+                                >
+                                  Contact Us
+                                </NavLink>
+                                <NavLink
+                                  exact
+                                  to='/'
+                                  className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
+                                  replace
+                                >
+                                  FAQ
+                                </NavLink>
+                                <NavLink
+                                  exact
+                                  to='/Login'
+                                  className='nav-link text-gray-600 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium'
+                                  replace
+                                >
+                                  Login
+                                </NavLink>
                               </div>
                             </div>
                           </div>

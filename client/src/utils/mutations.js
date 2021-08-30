@@ -51,6 +51,18 @@ export const ADD_JOB = gql`
       price
       description
       location
+      firstName
+      lastName
     }
   }
 `;
+
+export const REMOVE_JOB = gql`
+  mutation removeJob ($title: String) {
+    removeJob(title: String){
+      _id
+    }
+  }
+`;
+
+
