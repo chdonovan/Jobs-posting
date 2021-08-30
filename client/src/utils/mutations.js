@@ -58,10 +58,10 @@ export const ADD_JOB = gql`
 `;
 
 export const REMOVE_JOB = gql`
-  mutation removeJob ($title: String) {
-    removeJob(title: String){
-      _id
-    }
+  mutation removeJob(
+    $id: String!
+    ) {
+    removeJob
   }
 `;
 

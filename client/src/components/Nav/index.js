@@ -78,14 +78,14 @@ const Nav = () => {
                   >
                     FAQ
                   </NavLink>
-                    <NavLink
-                      exact
-                      to='/Login'
-                      className='nav-link text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                      replace
-                    >
-                      Login
-                    </NavLink>
+                  <NavLink
+                    exact
+                    to='/Login'
+                    className='nav-link text-gray-300 hover:bg-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                    replace
+                  >
+                    Login
+                  </NavLink>
                 </div>
               </Disclosure.Panel>
 
@@ -170,9 +170,14 @@ const Nav = () => {
                       <div className='relative flex mt-3 mr-14 items-center'>
                         <div className='mt-3 mr-14 cust-font font-bold text-gray-600'>
                           <button>
-                            <NavLink exact to='/Myjobs'>
-                                My Jobs
-                              </NavLink>
+                            <NavLink
+                              exact
+                              to='/Myjobs'
+                              className='cust-font font-bold text-gray-600 bg-gray-200 hover:bg-gray-100 px-10 py-1 rounded-xl shadow-md'
+                              replace
+                            >
+                              My Jobs
+                            </NavLink>
                           </button>
                         </div>
                         <div className='mr-5'>
