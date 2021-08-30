@@ -15,7 +15,7 @@
 	--palegray: #F3F3F3; 
 	--yellow: #ffaf74;
 	--orange: #f58c73;
-	--red: #D67676;
+	--red: #f77f7f;
 	--blue: #0082ac;
 	--light-blue: #55b4d1;
 	
@@ -76,6 +76,12 @@
 .btn-main-orange:hover {
 	background-color:rgb(255, 157, 128);
 }
+.btn-main-red {
+	background-color: rgb(255, 147, 128);
+}
+.btn-main-red:hover {
+	background-color:var(--red) ;
+}
 
 
 .cust-font {
@@ -85,7 +91,7 @@
 .bg-city{
     position:fixed;
     bottom:0px;
-		z-index: -1;
+		z-index: -100;
 }
 
 .lg-map-placeholder {
