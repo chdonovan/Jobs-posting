@@ -10,8 +10,9 @@ import { REMOVE_JOB } from '../../utils/mutations';
 
 const MyJobs = () => {
     const { data } = useQuery(QUERY_ME);
-    const [jobs, setJobs] = useState(data.me.jobs || []);
-    const [removeJob] = useMutation(REMOVE_JOB);
+    const [jobs, setJobs
+    ] = useState(data.me.jobs || []);
+   const [removeJob] = useMutation(REMOVE_JOB);
 
 
     const handleDeleteBtn = async (event, jobId) => {
@@ -89,14 +90,14 @@ const MyJobs = () => {
                             >
                             <BsFillEnvelopeFill className='h-5 w-5 text-gray-600' />
                             </button>
-                            <button
+                            {/* <button
                             type='button'
                             className='ml-2 bg-gray-300 py-2 px-3 border border-none shadow-md rounded-lg leading-4 hover:bg-gray-400 focus:outline-none focus:ring-none'
                             onClick={(event) => handleDeleteBtn(event, job._id)} 
                             id={job._id}
                             >
                                 <img src="https://img.icons8.com/ios-filled/96/000000/empty-trash.png" alt="wastebasket" className='h-5 w-5 text-gray-600'/>
-                            </button>
+                            </button> */}
                         </div>
                         </div>
                     </div>

@@ -111,9 +111,10 @@ const resolvers = {
 
     removeJob: async (parent, args, context) => {
         if (context.user) {
-          const job = await Job.remove({ ...args, username: context.user.username });
+          const job = await Job.remove({ ...args, firstName: context.user.firstName,
+            lastName: context.user.lastName });
 
-          await User.findByIdAndUpdate(
+          await User.findByIdAndDelete(
             { _id: context.user._id },
             { $pull: { jobs: job._id } },
             { new: true }
